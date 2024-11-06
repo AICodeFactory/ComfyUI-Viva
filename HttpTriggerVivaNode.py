@@ -1,6 +1,6 @@
 import requests
 
-class HttpTriggerNode:
+class HttpTriggerVivaNode:
   
   @classmethod
   def INPUT_TYPES(s): 

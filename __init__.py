@@ -5,15 +5,18 @@ python = sys.executable
 
 
 #INPORT NODES
-from .HttpTriggerNode import HttpTriggerNode
+from .HttpTriggerImageNode import HttpTriggerImageNode
+from .HttpTriggerVivaNode import HttpTriggerVivaNode
 
 # ------- MAPPING ------- #
 NODE_CLASS_MAPPINGS = { 
-    "HttpTrigger_Viva": HttpTriggerNode,
+    "HttpTrigger_Viva": HttpTriggerVivaNode,
+    "HttpTrigger_Image": HttpTriggerImageNode
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = { 
     "HttpTrigger_Viva": "HttpTrigger (Viva)",
+    "HttpTrigger_Image": "HttpTrigger (Image)",
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
