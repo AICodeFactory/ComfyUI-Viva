@@ -1,4 +1,7 @@
 import requests
+from .AlwaysEqualProxy import AlwaysEqualProxy
+
+any_type = AlwaysEqualProxy("*")
 
 class HttpTriggerCommonNode:
   
