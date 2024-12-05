@@ -19,8 +19,9 @@ class HttpTriggerImageNode:
   FUNCTION = "display_file_names"
 
   def display_file_names(self, input_image, http_url, id):
-      # get请求一个接口
-      requests.get(http_url+id)
+      # get请求一个接口，如果以http开头，则请求
+      if http_url.startswith("http"):
+        requests.get(http_url+id)
       print("http_url+id: " + http_url+id)
       return {"ui": {"string": [http_url+id,]}, "result": (http_url+id,)}
     
