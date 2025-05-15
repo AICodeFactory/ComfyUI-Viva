@@ -18,7 +18,7 @@ class HttpTriggerCommonNode:
   FUNCTION = "http_trigger"
   CATEGORY = "Viva"
 
-  def http_trigger(self, http_url):
+  def http_trigger(self, http_url, prompt=None, dynamic_prompt=None, anything=None):
       print(f"http_url: {http_url}")
       # 处理列表类型的http_url
       for url in http_url:
