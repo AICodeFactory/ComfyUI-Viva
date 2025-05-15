@@ -1,5 +1,6 @@
 import requests
 from .AlwaysEqualProxy import AlwaysEqualProxy
+from server import PromptServer
 
 any_type = AlwaysEqualProxy("*")
 
@@ -8,8 +9,7 @@ class HttpTriggerCommonNode:
   @classmethod
   def INPUT_TYPES(s):
         return {"required": {"http_url": ("STRING", { "multiline": True, "default": ""}),}, 
-                "optional": {"anything": (any_type, {}), },
-                "hidden": {"prompt": "PROMPT", "dynamic_prompt": "DYNPROMPT"}}
+                "optional": {"anything": (any_type, {}), }}
   
   RETURN_TYPES = (any_type,)
   RETURN_NAMES = ('output',)
@@ -18,12 +18,9 @@ class HttpTriggerCommonNode:
   FUNCTION = "http_trigger"
   CATEGORY = "Viva"
 
-  def http_trigger(self, http_url, prompt=None, dynamic_prompt=None, anything=None):
-      # get请求一个接口
-      # requests.get(http_url)
+  def http_trigger(self, http_url):
       print( http_url)
-      print( prompt)
-      print( dynamic_prompt)
-      print( anything)
-      return {"ui": {"string": [http_url]}, "result": (http_url)}
+      # get请求一个接口
+      requests.get(http_url)
+      return {"ui": {"string": [prompt_id]}, "result": (prompt_id)}
     
